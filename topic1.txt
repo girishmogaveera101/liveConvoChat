@@ -1,0 +1,11 @@
+hii
+hiii everybody
+hii man
+u from?
+e
+edd
+ok
+yuggo wr8frfw0yu iiwr wr y8wryr 
+bw yuggo wr8frfw0yu iiwr wr y8wryryuggo wr8frfw0yu iiwr wr y8wryrvyuggo wr8frfw0yu iiwr wr y8wryryuggo wr8frfw0yu iiwr wr y8wryr
+yuggo wr8frfw0yu iiwr wr y8wryryuggo wr8frfw0yu iiwr wr y8wryrvvvvvvv
+  top: 0%;     width: 100%;     border-bottom: 1px solid rgb(73, 73, 73); }  #container{     border: 0px solid white;     margin-top: 120px;     overflow-y: scroll;     overflow-x: hidden;     /* background-color: rgb(75, 75, 75); */     position: fixed;     height: 77%;     width: 80%; } #container::-webkit-scrollbar{     display: none; } #table2 td{     border: 0px solid white;     vertical-align: middle; } #topic{     color: antiquewhite;

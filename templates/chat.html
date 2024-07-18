@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Live Chat</title>
+    <!-- css file -->
+     <link rel="stylesheet" href="../static/styles/chat.css"/>
+</head>
+<body>
+
+
+    <table id="table1">
+        <tr>
+            <td>
+                <p id="topic">#neetscam2024</p>
+            </td>
+        </tr>
+    </table>
+
+
+    <div id="container">
+    </div>
+
+
+    <form id="form1" action="/sendMessage" method="Post" autocomplete="off">
+        <input type="text" placeholder="enter the message" name="message" id="inputMsg" autocomplete="off" required/>
+        <input type="submit" id="sendButton" value="send" autocomplete="off"/>
+    </form>
+
+
+</body>
+
+
+
+
+<script>
+    // Function to create a card element
+    function createCard(msg4) {
+        const msg5 = document.createElement('p');
+
+
+        msg5.innerHTML = 
+        `       <table id='table2'>
+                    <tr>
+                        <td style="width:15%; text-align:center">
+                             <img id='userPfl' src="./static/1.png"/>
+                        </td>
+                        <td style="width:85%">
+                            <p class='username' id='username'>username</p>
+                            <p class="msg" id="msg">${msg4}</p>
+                        </td>
+                    </tr>
+                </table>
+        `;
+
+        return msg5;
+    }
+
+    // Function to display multiple cards
+    function displayCards(msg1) {
+        const container = document.getElementById('container');
+        msg1.forEach(msg2 => {
+            const msg3 = createCard(msg2.msg,);
+            container.appendChild(msg3);
+
+        });
+
+    }
+    // Get the values from Flask and display the cards on loading
+    document.addEventListener('DOMContentLoaded', () => {
+        const message = {{ messages | tojson }};
+        // focusing the input tag on loading
+        document.getElementById('inputMsg').focus();
+
+        // displayinhg all messges
+        displayCards(message);
+
+        // final messge element creating
+        var fmsg = document.getElementById('inputMsg').value;
+        const msgf = document.createElement('p');
+        msgf.innerHTML =
+        `
+            <table id='table2'>
+                    <tr>
+                        <td style="width:15%">
+                            <img id='userPfl' src="./static/1.png"/>
+                        </td>
+                        <td style="width:85%">
+                            <p class='username' id='username'>username</p>
+                            <p class="msg" id="msg">{{fmsg}}</p>
+                        </td>
+                    </tr>
+            </table>
+        `;
+        container.appendChild(msgf);//appending it
+
+        // scroll all messages to final messsge
+        var area = document.getElementById('container');
+        area.scrollTop=area.scrollHeight;
+    });
+
+
+    // reload auto for 10 sec
+    setInterval(function(){
+        location.reload();
+    },15000);
+
+
+
+</script>
+
+
+
+
+
+
+
+
+
+</html>
